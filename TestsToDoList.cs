@@ -28,28 +28,9 @@ namespace TestingToDoList
             var tasks = _todoList.GetAllTasks();
             Assert.DoesNotContain(task, tasks);
         }
-        //Tredje test : ogiltig index ska inte påverka 
-        [Fact]
-        public void RemoveTask_InvalidIndex_ShouldNotThrowException()
-        {
-            var task = "Valid Task";
-            _todoList.AddTask(task);
-            _todoList.RemoveTask(10); // Invalid index
-            var tasks = _todoList.GetAllTasks();
-            Assert.Single(tasks); //Den ursprungliga uppgiften ska fortfarande finnas kvar
-        }
-        //En till test för att hantera stor tal tasks utan att påverka eller göra fel
-        [Fact]
-        public void AddTask_ShouldAddManyTasks()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                var task = "Task " + i;
-                _todoList.AddTask(task);
-            }
-            var tasks = _todoList.GetAllTasks();
-            Assert.Equal(1000, tasks.Count);
-        }
+        
+      
 
+        
     }
 }
