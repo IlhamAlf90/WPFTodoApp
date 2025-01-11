@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFTodoApp
 {
-    /// <summary>
-    /// hanterar logiken för lägga till, ta bort och visa todo items
-    /// </summary>
+    
     public class TodoList
     {
         private List<string> tasks = new List<string>();
