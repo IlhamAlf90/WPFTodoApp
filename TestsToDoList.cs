@@ -25,9 +25,15 @@ namespace TestingToDoList
             var tasks = _todoList.GetAllTasks(); 
             Assert.DoesNotContain(task, tasks);
         }
-        
-      
+         [Fact]
+         public void RemoveTask_InvalidIndex_ShouldNotThrowException()
+        {
+          var task = "Valid Task";
+          _todoList.AddTask(task);
+          _todoList.RemoveTask(10); // Invalid index
+          var tasks = _todoList.GetAllTasks();
+          Assert.Single(tasks); //Den ursprungliga uppgiften ska fortfarande finnas kvar
+        }
 
-        
     }
 }
